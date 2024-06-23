@@ -1,0 +1,159 @@
+@media (min-width: 0px) and (max-width: 992px) {
+
+#products {
+  position: relative;
+  padding: 20px;
+}
+
+.categories-procontainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.product-procontainer {
+  margin-left: 200px; /* Atur jarak agar tidak bertabrakan */
+}
+
+.category {
+  margin-bottom: 10px;
+  cursor: pointer; /* Tambahkan ini untuk mengubah kursor menjadi tangan saat dihover */
+}
+
+.product {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  width: calc((100% - 240px) / 3 - 2px); /* Sesuaikan dengan lebar baru */
+  height: 190px;
+  margin: 0 auto 20px; /* Sesuaikan margin */
+  cursor: pointer; /* Tambahkan ini untuk mengubah kursor menjadi tangan saat dihover */
+}
+
+.product img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* BATAS */
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#products {
+  padding: 20px;
+  text-align: center; /* Menengahkan konten di dalam #products */
+}
+
+
+.category {
+  padding: 10px 20px;
+  margin-right: 10px;
+  background-color: #ddd;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.product-procontainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 0 auto;
+  max-height: 600px; /* Sesuaikan dengan tinggi maksimum yang diinginkan */
+  overflow-y: auto; /* Aktifkan scroll vertikal jika konten melebihi ukuran */
+}
+
+
+.product {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  width: calc((100% - 40px) / 3 - 2px + 190px); /* Lebarkan kotak produk dengan menambahkan 40px */
+  height: 190px; /* Set tinggi kotak produk menjadi 190px */
+  margin: 0 auto; /* Rata tengah */
+}
+
+
+
+
+.product img {
+  max-width: 100%;
+  height: auto;
+}
+
+}
+/* BATASS */
+
+
+@media (min-width: 992px) and (max-width: 1500px) {
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#products {
+  padding: 20px;
+  text-align: center; /* Menengahkan konten di dalam #products */
+}
+
+.categories-procontainer {
+  width: 20cm; /* Atur lebar sesuai kebutuhan */
+  overflow-x: auto;
+  white-space: nowrap;
+  margin: 0 auto; /* Menengahkan categories-procontainer */
+}
+
+.categories {
+  display: inline-block;
+}
+
+.category {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 10px;
+  background-color: #ddd;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.category.active {
+  background-color: #bbb;
+}
+
+.product-procontainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 0 auto;
+  max-height: 600px; /* Sesuaikan dengan tinggi maksimum yang diinginkan */
+  overflow-y: auto; /* Aktifkan scroll vertikal jika konten melebihi ukuran */
+}
+
+
+.product {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  width: calc((100% - 40px) / 3 - 2px + 190px); /* Lebarkan kotak produk dengan menambahkan 40px */
+  height: 190px; /* Set tinggi kotak produk menjadi 190px */
+  margin: 0 auto; /* Rata tengah */
+}
+
+
+
+
+.product img {
+  max-width: 100%;
+  height: auto;
+}
+}

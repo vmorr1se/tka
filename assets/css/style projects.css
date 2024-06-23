@@ -1,0 +1,187 @@
+@media (min-width: 0px) {
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .projects {
+    padding-top: 50px;
+    padding-bottom: 100px;
+
+  }
+
+
+  
+  /* Untuk kotak besar */
+  .big-box {
+    position: absolute;
+    filter: blur(80px);
+    width: 100%; /* Lebar kotak lebih lebar 100px dari slider-container */
+    height: 400px; /* Tinggi kotak, bisa diubah sesuai kebutuhan */
+    background-color: rgba(0, 0, 0, 0.839); /* Warna kotak */
+    z-index: 1; /* Pastikan kotak berada di bawah slider-container */
+  }
+
+
+
+  
+  .slider-container {
+    z-index: 2;
+    position: relative;
+    width: 85%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-bottom: 70px; /* Menambahkan padding bawah untuk memberi ruang bagi pagination */
+}
+
+  
+  .slider {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .slide {
+    flex: 0 0 calc(100% - 20px); /* Menggunakan calc() untuk menghitung lebar dengan jarak 20px */
+    margin: 0 10px; /* Menambahkan jarak horizontal 10px di sekitar setiap kotak */
+    width: 300px;
+    height: 400px; /* Menghapus tinggi tetap, agar tinggi menyesuaikan dengan konten */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(111, 56, 56, 0);
+    font-size: 24px;
+    overflow: hidden; /* Mengatasi gambar yang terlalu besar */
+  }
+  
+  
+  .slide img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+  
+  
+  .prev,
+  .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    width: 40px; /* Lebar tombol panah */
+    height: 40px; /* Tinggi tombol panah */
+    border-radius: 50%; /* Untuk membuat lingkaran */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff; /* Warna ikon panah */
+    background-color: rgba(0, 0, 0, 0.5); /* Warna latar belakang */
+    z-index: 2; /* Atur z-index agar tombol panah ada di atas slide */
+    transition: transform 0.3s ease; /* Transisi untuk perubahan ukuran */
+    transform-origin: center; /* Titik asal transformasi */
+  }
+  
+  .prev {
+    left: 5px; /* Geser ke kiri */
+  }
+  
+  .next {
+    right: 5px; /* Geser ke kanan */
+  }
+  
+  .prev:hover,
+  .next:hover {
+    transform: translateY(-50%) scale(1.1); /* Memperbesar gambar saat kursor di atasnya */
+  }
+  
+  .prev:active,
+  .next:active {
+    transform: translateY(-50%) scale(1); /* Mengembalikan ukuran gambar ke ukuran semula saat tombol ditekan */
+  }
+  
+  
+  
+  .pagination {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .page-indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color:rgb(255, 255, 255);
+    margin: 0 5px;
+  }
+  
+  .page-indicator.active {
+    transform: scale(1.5); /* Memperbesar ukuran indikator aktif */
+
+    background-color: rgb(255, 255, 255);
+  }
+  
+
+  .event-card .card-banner .img-cover {
+    transition: var(--transition-2);
+  }
+
+}
+@media (min-width: 768px) {
+
+.slide {
+  flex: 0 0 calc(50% - 20px); /* Menggunakan calc() untuk menghitung lebar dengan jarak 20px */
+  margin: 0 10px; /* Menambahkan jarak horizontal 10px di sekitar setiap kotak */
+  width: 300px;
+  height: 400px; /* Menghapus tinggi tetap, agar tinggi menyesuaikan dengan konten */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(111, 56, 56, 0);
+  font-size: 24px;
+  overflow: hidden; /* Mengatasi gambar yang terlalu besar */
+}
+
+}
+
+@media (min-width: 992px) {
+  .slide {
+    flex: 0 0 calc(33.33% - 20px); /* Menggunakan calc() untuk menghitung lebar dengan jarak 20px */
+    margin: 0 10px; /* Menambahkan jarak horizontal 10px di sekitar setiap kotak */
+    width: 300px;
+    height: 370px; /* Menghapus tinggi tetap, agar tinggi menyesuaikan dengan konten */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 24px;
+    overflow: hidden; /* Mengatasi gambar yang terlalu besar */
+  }
+  .slider-container {
+    z-index: 2;
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-bottom: 70px; /* Menambahkan padding bawah untuk memberi ruang bagi pagination */
+}
+}
+@media (min-width: 1200px) {
+  .slider-container {
+    z-index: 2;
+    position: relative;
+    width: 75%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-bottom: 70px; /* Menambahkan padding bawah untuk memberi ruang bagi pagination */
+}
+}
+
+
+
+

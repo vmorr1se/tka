@@ -51,6 +51,11 @@
     --ionicon-stroke-width: 60px;
   }
 
+
+       .topbarlogo:has(~ .headernew.active) {
+        transform: translateY(-100%);
+      }
+  
   .topbarlogo-item .span {
     font-size: var(--fontSize-label-1);
   }

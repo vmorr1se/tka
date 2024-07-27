@@ -1,0 +1,196 @@
+.footer {
+  display: none; /* Sembunyikan keduanya secara default */
+}
+
+
+
+@media (min-width: 768px) {
+/*-----------------------------------*\
+  #FOOTER
+\*-----------------------------------*/
+.footer {
+  display: block; /* Sembunyikan keduanya secara default */
+}
+
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    height: 100px;
+  }
+  
+  .social-item {
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    height: 50px;
+    width: 50px;
+    margin: 0 30px;
+  }
+  
+  .social-item a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.3s ease;
+  }
+  
+  .social-item.instagram a:hover {
+    background-image: url("../images/ICON/IG.png");
+  }
+  
+  .social-item.instagram a {
+    background-image: url("../images/ICON/icons8-instagram-240\ \(2\).png");
+  }
+  
+  .social-item.facebook a:hover {
+    background-image: url("../images/ICON/FB.png");
+  }
+  
+  .social-item.facebook a {
+    background-image: url("../images/ICON/icons8-facebook-480.png");
+  }
+  
+  .social-item.whatsapp a:hover {
+    background-image: url("../images/ICON/WA.png");
+  }
+  
+  .social-item.whatsapp a {
+    background-image: url("../images/ICON/icons8-whatsapp-480\ \(1\).png");
+  }
+  
+  .social-item.instagram a:hover {
+    background-image: url("../images/ICON/IG.png");
+  }
+  
+  .social-item.instagram a {
+    background-image: url("../images/ICON/icons8-instagram-240\ \(2\).png"); /* Ganti dengan gambar hover */
+  }
+  
+  .social-item.facebook a:hover {
+    background-image: url("../images/ICON/FB.png");
+  }
+  
+  .social-item.facebook a {
+    background-image: url("../images/ICON/icons8-facebook-480.png"); /* Ganti dengan gambar hover */
+  }
+  
+  .social-item.whatsapp a:hover {
+    background-image: url("../images/ICON/WA.png");
+  }
+  
+  .social-item.whatsapp a {
+    background-image: url("../images/ICON/icons8-whatsapp-480\ \(1\).png"); /* Ganti dengan gambar hover */
+  }
+  
+  .footer-brand {
+    position: relative;
+    padding: 50px 40px;
+    background-color: var(--smoky-black-1);
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%236f6f6f' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+    background-position: center top;
+    background-repeat: repeat;
+  }
+  
+  .footer-brand::before,
+  .footer-brand::after {
+    top: 0;
+    width: 15px;
+    height: 100%;
+    background-color: var(--navy);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='32' viewBox='0 0 16 32'%3E%3Cg fill='%239C92AC' fill-opacity='0.4'%3E%3Cpath fill-rule='evenodd' d='M0 24h4v2H0v-2zm0 4h6v2H0v-2zm0-8h2v2H0v-2zM0 0h4v2H0V0zm0 4h2v2H0V4zm16 20h-6v2h6v-2zm0 4H8v2h8v-2zm0-8h-4v2h4v-2zm0-20h-6v2h6V0zm0 4h-4v2h4V4zm-2 12h2v2h-2v-2zm0-8h2v2h-2V8zM2 8h10v2H2V8zm0 8h10v2H2v-2zm-2-4h14v2H0v-2zm4-8h6v2H4V4zm0 16h6v2H4v-2zM6 0h2v2H6V0zm0 24h2v2H6v-2z'/%3E%3C/g%3E%3C/svg%3E");
+  }
+  
+  .footer-brand::before {
+    left: 0;
+  }
+  
+  .footer-brand::after {
+    right: 0;
+  }
+  
+  .footer-brand .logo {
+    max-width: max-content;
+    margin-inline: auto;
+    margin-block-end: 40px;
+  }
+  
+  .footer-brand :is(.body-4, .label-1) {
+    color: var(--quick-silver);
+    line-height: var(--lineHeight-3);
+  }
+  
+  .footer-brand .contact-link {
+    letter-spacing: 1px;
+    margin-block: 6px;
+    transition: var(--transition-1);
+  }
+  
+  .footer-brand .contact-link:is(:hover, :focus-visible) {
+    color: var(--soft-blue);
+  }
+  
+  .footer-brand .wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+    margin-block: 40px 25px;
+  }
+  
+  .footer-brand .separator {
+    animation: rotate360 15s linear infinite;
+  }
+  
+  .footer-brand .label-1 {
+    margin-block-end: 30px;
+  }
+  
+  .footer-brand .label-1 .span {
+    display: inline;
+    color: var(--white);
+  }
+  
+  .footer-brand .icon-wrapper .input-field {
+    cursor: text;
+  }
+  
+  .footer-brand .btn {
+    min-width: 100%;
+  }
+  
+  .footer-list {
+    display: grid;
+    gap: 20px;
+  }
+  
+  .footer-link {
+    color: var(--quick-silver);
+    font-weight: var(--weight-700);
+    text-transform: uppercase;
+    letter-spacing: var(--letterSpacing-4);
+    margin-inline: auto;
+    transition: var(--transition-1);
+  }
+  
+  .footer-link:is(:hover, :focus-visible) {
+    color: var(--soft-blue);
+  }
+  
+  .footer-text {
+    padding-top: 25px;
+  }
+
+
+
+
+
+
+.grid-list-footer {
+    display: grid;
+    gap: 40px;
+  }
+}

@@ -9,10 +9,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const totalSlides = document.querySelectorAll('.slide').length;
 
     // Set slidesPerPage berdasarkan lebar layar saat halaman dimuat
-    if (window.innerWidth >= 1220) {
+    if (window.innerWidth >= 992) {
         slidesPerPage = 3;
     } else if (window.innerWidth >= 768) {
         slidesPerPage = 2;
+    } else if (window.innerWidth >= 575) {
+        slidesPerPage = 1;
     }
 
     prevButton.style.display = 'none'; // Sembunyikan tombol prev secara default

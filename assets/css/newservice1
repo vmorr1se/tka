@@ -1,0 +1,239 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.services-section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  text-align: center;
+  background-color: var(--black);
+}
+
+.services-section h2 {
+  margin-bottom: 30px;
+}
+
+.cardsv-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  background-color: var(--black);
+}
+
+.cardsv {
+  margin: 0 0;
+  background-color: inherit; /* Hapus atau sesuaikan jika cardsv hanya untuk gambar */
+  border-radius: 5px;
+  width: 100%;
+  max-width: 340px;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+}
+
+.slidersv {
+  position: relative;
+  width: 100%;
+  height: 300px; /* Ubah sesuai tinggi gambar yang diinginkan */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(0, 0, 0);
+}
+
+.slidersv img {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slidersv img.active {
+  opacity: 1;
+}
+
+.paginationsv {
+  text-align: center;
+  margin: 0; /* Remove margin */
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+}
+
+.paginationsv span {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  margin: 0 2px;
+  cursor: pointer;
+}
+
+.paginationsv .active {
+  background-color: #717171;
+}
+
+.cardsv-description {
+    margin-top: 30px;
+  padding: 15px;
+  text-align: center;
+  background-color: var(--black); /* Ubah menjadi transparent untuk menghapus background putih */
+}
+
+.cardsv-description h3 {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.cardsv-description p {
+  color: #777;
+  margin: 0;
+}
+
+.image-container {
+    height: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+
+  
+  /*  */
+.has-before {
+  position: relative;
+  z-index: 1; /* Ensure this is above the background but below other content */
+}
+
+/* .has-before::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/PATTERN/form-pattern\ \(2\).png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1; 
+  opacity: 1.0;
+} */
+
+  
+  .cardsv.has-before {
+    padding-block: 30px;
+    margin-block-end: 26px;
+  }
+  
+  .cardsv.has-before::before {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 76%;
+    background-image: url("../images/PATTERN/form-pattern\ \(2\).png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: repeat;
+    transition: var(--transition-2);
+    z-index: -1;
+    will-change: transform;
+  }
+  
+  .cardsv.has-before:hover::before, 
+  .cardsv.has-before:focus-within::before {
+    transform: rotateY(0.5turn) translateX(50%);
+    transition-delay: 300ms;
+  }
+  
+
+/* Pause/Play Buttons */
+.play-pause-controls {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.play-pause-controls button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-pause-controls .play::before {
+  content: "▶"; /* Play symbol */
+}
+
+.play-pause-controls .pause::before {
+  content: "⏸"; /* Pause symbol */
+}
+
+/* Media Queries */
+@media (max-width: 575px) {
+  .cardsv {
+    width: 100%;
+    max-width: 340px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+  .cardsv {
+    width: calc(50% - 20px);
+    max-width: 340px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .cardsv {
+    width: calc(33.33% - 20px);
+    max-width: 340px;
+  }
+
+  .cardsv:nth-child(1),
+  .cardsv:nth-child(2),
+  .cardsv:nth-child(6),
+  .cardsv:nth-child(7) {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .cardsv {
+    width: calc(25% - 20px);
+    max-width: 340px;
+  }
+
+  .cardsv:nth-child(1),
+  .cardsv:nth-child(2),
+  .cardsv:nth-child(3),
+  .cardsv:nth-child(4) {
+    width: calc(25% - 20px);
+  }
+
+  .cardsv:nth-child(5),
+  .cardsv:nth-child(6),
+  .cardsv:nth-child(7) {
+    width: calc(33.33% - 20px);
+  }
+}

@@ -5,60 +5,54 @@
  * 
  * loading will be end after document is loaded
  */
-
 const preloader = document.querySelector("[data-preaload]");
 
 window.addEventListener("load", function () {
   preloader.classList.add("loaded");
   document.body.classList.add("loaded");
-});
 
+  // Initial check to activate the correct nav link
+  updateActiveNavLink();
+});
 
 /**
  * add event listener on multiple elements
  */
-
 const addEventOnElements = function (elements, eventType, callback) {
   for (let i = 0, len = elements.length; i < len; i++) {
     elements[i].addEventListener(eventType, callback);
   }
 }
 
-
-
 /**
- * navvBAR
+ * NAVBAR
  */
-
-const navvbar = document.querySelector("[data-navvbar]");
-const navvTogglers = document.querySelectorAll("[data-navv-toggler]");
+const navbar = document.querySelector("[data-navbar]");
+const navTogglers = document.querySelectorAll("[data-nav-toggler]");
 const overlay = document.querySelector("[data-overlay]");
 
-const togglenavvbar = function () {
-  navvbar.classList.toggle("active");
+const toggleNavbar = function () {
+  navbar.classList.toggle("active");
   overlay.classList.toggle("active");
-  document.body.classList.toggle("navv-active");
+  document.body.classList.toggle("nav-active");
 }
 
-addEventOnElements(navvTogglers, "click", togglenavvbar);
-
-
+addEventOnElements(navTogglers, "click", toggleNavbar);
 
 /**
- * headerr & BACK TOP BTN
+ * HEADER & BACK TOP BTN
  */
-
-const headerr = document.querySelector("[data-headerr]");
+const header = document.querySelector("[data-header]");
 const backTopBtn = document.querySelector("[data-back-top-btn]");
 
 let lastScrollPos = 0;
 
-const hideheaderr = function () {
+const hideHeader = function () {
   const isScrollBottom = lastScrollPos < window.scrollY;
   if (isScrollBottom) {
-    headerr.classList.add("hide");
+    header.classList.add("hide");
   } else {
-    headerr.classList.remove("hide");
+    header.classList.remove("hide");
   }
 
   lastScrollPos = window.scrollY;
@@ -66,63 +60,35 @@ const hideheaderr = function () {
 
 window.addEventListener("scroll", function () {
   if (window.scrollY >= 50) {
-    headerr.classList.add("active");
+    header.classList.add("active");
     backTopBtn.classList.add("active");
-    hideheaderr();
+    hideHeader();
+    updateActiveNavLink();
   } else {
-    headerr.classList.remove("active");
+    header.classList.remove("active");
     backTopBtn.classList.remove("active");
   }
 });
 
-
-
 /**
- * HERO SLIDER
+ * Update active nav link based on scroll position
  */
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.navbar-link');
 
-const heroSlider = document.querySelector("[data-hero-slider]");
-const heroSliderItems = document.querySelectorAll("[data-hero-slider-item]");
-const heroSliderPrevBtn = document.querySelector("[data-prev-btn]");
-const heroSliderNextBtn = document.querySelector("[data-next-btn]");
+const updateActiveNavLink = function () {
+  let index = sections.length;
 
-let currentSlidePos = 0;
-let lastActiveSliderItem = heroSliderItems[0];
+  while(--index && window.scrollY + 50 < sections[index].offsetTop) {}
 
-const updateSliderPos = function () {
-  lastActiveSliderItem.classList.remove("active");
-  heroSliderItems[currentSlidePos].classList.add("active");
-  lastActiveSliderItem = heroSliderItems[currentSlidePos];
+  navLinks.forEach((link) => link.classList.remove('active'));
+  navLinks[index].classList.add('active');
 }
 
-const slideNext = function () {
-  if (currentSlidePos >= heroSliderItems.length - 1) {
-    currentSlidePos = 0;
-  } else {
-    currentSlidePos++;
-  }
-
-  updateSliderPos();
-}
-
-heroSliderNextBtn.addEventListener("click", slideNext);
-
-const slidePrev = function () {
-  if (currentSlidePos <= 0) {
-    currentSlidePos = heroSliderItems.length - 1;
-  } else {
-    currentSlidePos--;
-  }
-
-  updateSliderPos();
-}
-
-heroSliderPrevBtn.addEventListener("click", slidePrev);
 
 /**
  * auto slide
  */
-
 let autoSlideInterval;
 
 const autoSlide = function () {
@@ -139,12 +105,9 @@ addEventOnElements([heroSliderNextBtn, heroSliderPrevBtn], "mouseout", autoSlide
 
 window.addEventListener("load", autoSlide);
 
-
-
 /**
  * PARALLAX EFFECT
  */
-
 const parallaxItems = document.querySelectorAll("[data-parallax-item]");
 
 let x, y;

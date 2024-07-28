@@ -181,13 +181,11 @@ body {
   justify-content: center;
 }
 
-.play-pause-controls .play::before {
-  content: "▶"; /* Play symbol */
+.play-pause-controls .play::before,
+.play-pause-controls .pause::before {
+  content: none; /* Menghilangkan konten sebelumnya */
 }
 
-.play-pause-controls .pause::before {
-  content: "⏸"; /* Pause symbol */
-}
 
 /* Media Queries */
 @media (max-width: 575px) {

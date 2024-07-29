@@ -94,7 +94,8 @@
 }
 
 .section-product {
-  padding-top: 100px;
+  margin-top: 100px;
+  padding-top: 140px;
   padding-bottom: 100px;
 }
 
@@ -275,3 +276,132 @@
         width: calc(33.3333% - 13.3333px);
     }
 }
+
+/* LOGO */
+
+.banner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 10px 20px;
+  overflow: hidden;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+
+.services-section, .section-product {
+  position: relative;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+
+.services-section {
+  background-color: #000000; /* Warna latar belakang untuk demonstrasi */
+}
+
+.section-product {
+  background-color: var(--soft-blue); /* Sesuaikan dengan warna latar belakang produk Anda */
+}
+
+.banner-container {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+.carousel-track img:first-child {
+  margin-left: 3px;
+}
+
+
+.carousel {
+  flex: 0 0 64%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: relative;
+  white-space: nowrap; /* Prevent wrapping of images */
+}
+
+.carousel-track {
+  display: flex;
+  animation: scroll 25s linear infinite; /* Increase duration for smoother effect */
+  align-items: center;
+}
+
+.carousel-track img {
+  width: 100px;
+  height: auto;
+  margin-right: 20px;
+  transition: transform 0.3s;
+}
+
+.carousel-track img:hover {
+  transform: scale(1.1);
+}
+
+
+/* CSS for overlapping effect */
+.services-section::after, .section-product::before {
+  content: "";
+  display: block;
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  top: -25px;
+  left: 0;
+  z-index: -1;
+  background: white;
+}
+
+.services-section::after {
+  top: auto;
+  bottom: -55px;
+}
+
+
+
+
+.text-container {
+  flex: 1;
+  text-align: left;
+}
+
+.text-container h1 {
+  margin: 0;
+  font-size: 24px;
+  color: var(--navy);
+}
+
+@keyframes scroll {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(calc(-100px * 10));
+  }
+}
+
+@media (max-width: 600px) {
+  .banner {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .carousel {
+      margin-top: 10px;
+  }
+}
+
+
